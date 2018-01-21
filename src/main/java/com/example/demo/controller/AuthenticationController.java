@@ -15,16 +15,6 @@ public class AuthenticationController {
              */
     @RequestMapping(value = {"/login"},method = RequestMethod.POST)
     public ResponseEntity<?>  login(@RequestParam("username") String username, @RequestParam("password") String password){
-        System.out.println("YAYYAYAY");
-        System.out.println("user "+username+ " pass "+password);
         return new ResponseEntity<>(username, HttpStatus.OK);
-    }
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @RequestMapping("/test")
-    public void  test(@RequestParam("username") String username, @RequestParam("password") String password){
-        System.out.println("YAYYAYAY");
-        System.out.println("user "+username+ " pass "+password);
-        System.out.println("noo");
     }
 }

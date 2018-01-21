@@ -1,11 +1,13 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.els.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Table(name="USER_APP")
