@@ -43,6 +43,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
+    @SuppressWarnings("SpringJavaAutowiringInspection")
     private DataSource dataSource;
 
     @Bean

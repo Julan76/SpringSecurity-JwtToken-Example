@@ -13,10 +13,10 @@ import java.util.Collection;
 @RestController
 public class TestController {
     @RequestMapping("/test")
-    public void  test(@RequestParam("username") String username, @RequestParam("password") String password){
-        System.out.println("user "+username+ " pass "+password);
+    public void  test(){
+
         Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
-        System.out.println(authorities);
+        System.out.println("les roles "+authorities);
     }
 }
