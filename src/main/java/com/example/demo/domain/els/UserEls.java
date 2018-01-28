@@ -11,9 +11,11 @@ import java.util.List;
 
 @Document(indexName = "app", type = "users")
 @Data
+@AllArgsConstructor
 public class UserEls {
     @Id
-    private String id;
+    private Long id;
     @Setter
     private String name;
+
 }
