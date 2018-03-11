@@ -13,11 +13,10 @@ import java.util.Collection;
 @RestController
 public class TestController {
     @RequestMapping("/test")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public void  test(){
-
+    public void  test(@RequestParam("username") String username, @RequestParam("password") String password){
+        System.out.println("user "+username+ " pass "+password);
         Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>)    SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
-        System.out.println("les roles "+authorities);
+        System.out.println(authorities);
     }
 }
