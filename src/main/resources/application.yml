@@ -1,0 +1,30 @@
+spring:
+       datasource:
+                  driverClassName: org.postgresql.Driver
+                  url: jdbc:postgresql://localhost:5432/test
+                  username: postgres
+                  password: 123
+
+       jpa:
+                  database-platform: org.hibernate.dialect.PostgreSQLDialect
+                  generate-ddl: true
+                  show-sql: true
+                  hibernate:
+
+                            ddl-auto: create
+
+info:
+       api:
+                  version: 1
+                  name: app
+                  base-path: /v${info.api.version}/${info.api.name}
+
+
+security:
+                  oauth2:
+                            resource:
+                                      id: oauth2_application
+access_token:
+                   validity_period: 3600
+refresh_token:
+                   validity_period: 10000
