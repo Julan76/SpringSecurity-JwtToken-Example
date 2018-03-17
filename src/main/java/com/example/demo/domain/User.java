@@ -1,15 +1,14 @@
 package com.example.demo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
 @Table(name="USER_APP")
 @Entity
+@Data
 @NoArgsConstructor
 public class User {
 
@@ -17,6 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String username;
+    private String mail;
+    @JsonIgnore
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="USER_ROLES")
@@ -26,10 +27,5 @@ public class User {
         this.username = username;
         this.password = password;
         this.roles = roles;
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
     }
 }
