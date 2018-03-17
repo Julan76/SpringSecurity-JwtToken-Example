@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 
 import com.example.demo.domain.User;
-import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -3,7 +3,7 @@ package com.example.demo.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -14,9 +14,10 @@ public class Post {
     private Long id;
     private String title;
     private String description;
-    private LocalDate publicationDate;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalDateTime publicationDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    private LocalDateTime editDate;
     @ManyToOne
     @JoinColumn(name = "AUTHOR_ID")
     private User authorPost;

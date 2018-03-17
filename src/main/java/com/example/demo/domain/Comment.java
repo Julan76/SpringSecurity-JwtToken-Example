@@ -3,7 +3,7 @@ import lombok.Data;
 
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -12,8 +12,9 @@ public class Comment {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String text;
-    private LocalDate date;
-   @ManyToOne
-   @JoinColumn(name = "AUTHOR_ID")
+    private LocalDateTime publicationDate;
+    private LocalDateTime editDate;
+    @ManyToOne
+    @JoinColumn(name = "AUTHOR_ID")
     private User authorComment;
 }
