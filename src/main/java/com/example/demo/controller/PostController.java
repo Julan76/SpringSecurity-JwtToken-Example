@@ -25,12 +25,12 @@ public class PostController {
         postRepository.save(post);
         return  new ResponseEntity<>(post, HttpStatus.OK);
     }
-    @RequestMapping(method = RequestMethod.PUT)
+    @RequestMapping(value ="/{id}",method = RequestMethod.PUT)
     public ResponseEntity<Post> updatePost(@RequestBody Post post){
         Post postToUpdate=postRepository.findOne(post.getId());
         postToUpdate.setTitle(post.getTitle());
         postToUpdate.setDescription(post.getDescription());
         postToUpdate.setEditDate(LocalDateTime.now());
-        return new ResponseEntity<Post>(post,HttpStatus.OK);
+        return new ResponseEntity<>(post,HttpStatus.OK);
     }
 }
